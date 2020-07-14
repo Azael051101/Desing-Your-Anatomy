@@ -22,6 +22,7 @@ public class VentanaPrueba extends JFrame implements ActionListener{
 	 JTextArea detalles;
 	 ArrayList <String> contenido_1;
 	 ArrayList <String> contenido_2;
+	 ArrayList <String> contenido_3;
 
 
 
@@ -103,6 +104,8 @@ public class VentanaPrueba extends JFrame implements ActionListener{
 		}
 
 
+		
+
 	 	panel.add(btnLink);
 	 	panel.add(detalles);
 
@@ -119,24 +122,64 @@ public class VentanaPrueba extends JFrame implements ActionListener{
 
 	 public void actionPerformed(ActionEvent event){
 	 	if(event.getSource()== this.btnLink){
-	 		System.out.println("btnLink precionado");
+	 		//System.out.println("btnLink precionado");
+	 		Mano mano = new Mano();
+	 		mano.setVisible(false);
+	 		Brazo brazo = new Brazo();
+	 		brazo.setVisible(false);
+	 		
+	 		System.out.println(mano.derecho);
+	 		System.out.println(brazo.derecho);
+				if(mano.derecho == 2){ //mano derecha
+						if (java.awt.Desktop.isDesktopSupported()){
+			 			java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
 
-	
-	 		if (java.awt.Desktop.isDesktopSupported()){
-	 		java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+					 		if (desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
+					 			try{
+					 				java.net.URI link = new java.net.URI("https://www.dropbox.com/sh/1y6hi5ik2bn9r1u/AACJcB1rYb22SZtMYoB_A6uWa?dl=0");
+					 				desktop.browse(link);
+					 			}catch(URISyntaxException | IOException ex){}
+					 		}
+			 			} 
+				}else if(mano.derecho== 1){ //mano izq
+							if (java.awt.Desktop.isDesktopSupported()){
+			 			java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
 
-	 		if (desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
-	 			try{
-	 				java.net.URI link = new java.net.URI("https://www.google.com/");
-	 				desktop.browse(link);
-	 			}catch(URISyntaxException | IOException ex){}
-	 			
-	 		}
+					 		if (desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
+					 			try{
+					 				java.net.URI link = new java.net.URI("https://www.dropbox.com/sh/1whloo3whxgigjs/AADEg_-p5HUcQLOREj3ScLJza?dl=0");
+					 				desktop.browse(link);
+					 			}catch(URISyntaxException | IOException ex){}
+					 		}
+			 			} 
+
+				}else if(brazo.derecho== 1){ //brazo derecho
+							if (java.awt.Desktop.isDesktopSupported()){
+			 			java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+
+					 		if (desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
+					 			try{
+					 				java.net.URI link = new java.net.URI("https://www.dropbox.com/sh/i56r9ac85yf3p99/AAAOUWeHd8hm0DECtFAGmLYGa?dl=0");
+					 				desktop.browse(link);
+					 			}catch(URISyntaxException | IOException ex){}
+					 		}
+			 			} 
+
+				}else if(brazo.derecho== 2){ //brazo izquierdo
+							if (java.awt.Desktop.isDesktopSupported()){
+			 			java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+
+					 		if (desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
+					 			try{
+					 				java.net.URI link = new java.net.URI("https://www.dropbox.com/sh/3i9h6z1s2488wlk/AABB1HvSHlfwDmzNAH_owoSda?dl=0");
+					 				desktop.browse(link);
+					 			}catch(URISyntaxException | IOException ex){}
+					 		}
+			 			} 
+
+				}	 		
+		 			
 	 		
 	 	}
-	 
-	 	
-	 		
-	 	}
-	 }
+	}
 }

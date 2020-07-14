@@ -23,10 +23,12 @@ class Mano extends JFrame implements ActionListener{
 	 JTextField x;
 	 ArrayList<String> contenido;
 	 int valor =0;
+	public static int derecho = 0;
 
 
 
 	 public Mano(){
+	 	
 		
 		try{
 	 	Image img =ImageIO.read(new File("icon.png"));
@@ -115,7 +117,12 @@ class Mano extends JFrame implements ActionListener{
 	 	manoder.addActionListener(this);
 	 	continuar.addActionListener(this);
 
+	 	
+	 	
+
 	 }
+
+	 
 
 	 public void actionPerformed(ActionEvent event){
 	 	
@@ -123,9 +130,12 @@ class Mano extends JFrame implements ActionListener{
 	 		//System.out.println("manoizq precionado");
 	 		x.setText("zurdo");
 	 		valor = 1;
+	 		derecho = 1;
 		 }else if(event.getSource()== this.manoder){
 		 	//System.out.println("manoider precionado");
 		 	valor = 2;
+		 	x.setText("Disestro");
+		 	derecho = 2;
 		 }else if(event.getSource() == this.continuar){
 		 	//System.out.println("boton continuar");
 		 	
@@ -147,8 +157,15 @@ class Mano extends JFrame implements ActionListener{
 		 	}catch(Exception e){
 		 	}
 
+		 	VentanaPrueba vp = new VentanaPrueba();
+		 	vp.setVisible(false);
+
+
 		 	setVisible(false);
-		 }		
+		 }
+
 	}
+
+	
 	 
 }

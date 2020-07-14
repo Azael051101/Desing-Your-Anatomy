@@ -15,9 +15,8 @@ import javax.imageio.*;
 public class Ventana extends JFrame implements ActionListener{
 
 	JPanel panel;
-	JButton btncontinuar;
+	//JButton btncontinuar;
 	JButton verDetalles;
-	//JLabel wellcome;
 	JMenuBar menuBar;
 	JMenu menu;
 	JMenuItem itemPaciente;
@@ -51,11 +50,11 @@ public class Ventana extends JFrame implements ActionListener{
 		
 
 
-		btncontinuar = new JButton("Continuar");
+		/*btncontinuar = new JButton("Continuar");
 		btncontinuar.setBounds(750,500,150,60);
 		ImageIcon imagencontinuar = new ImageIcon("btncontinuar.png");
 	 	btncontinuar.setIcon(new ImageIcon(imagencontinuar.getImage().getScaledInstance(btncontinuar.getWidth(), btncontinuar.getHeight(), Image.SCALE_SMOOTH)));
-	 	btncontinuar.setBackground(Color.WHITE);
+	 	btncontinuar.setBackground(Color.WHITE);*/
 
 		verDetalles = new JButton("Conocenos");
 		verDetalles.setBounds(900,550,200,30);
@@ -125,7 +124,7 @@ public class Ventana extends JFrame implements ActionListener{
 		continuar.setBounds(130,510,90,40);
 
 
-		panel.add(btncontinuar);
+		//panel.add(btncontinuar);
 		panel.add(verDetalles);
 		//panel.add(wellcome);
 		panel.add(ciudades);
@@ -155,7 +154,7 @@ public class Ventana extends JFrame implements ActionListener{
 		this.setLocationRelativeTo(null);
 
 		//Añadir los accionPerformed
-		btncontinuar.addActionListener(this);
+		//btncontinuar.addActionListener(this);
 		verDetalles.addActionListener(this);
 		itemPaciente.addActionListener(this);
 		ciudades.addActionListener(this);
@@ -167,11 +166,11 @@ public class Ventana extends JFrame implements ActionListener{
 	
 	public void actionPerformed(ActionEvent event){
 		
-		if(event.getSource() == this.btncontinuar){
+		/*if(event.getSource() == this.btncontinuar){
 			System.out.println("btncontinuar pulsado");
 
-		}else if(event.getSource()== this.verDetalles){
-	
+		}else*/ if(event.getSource()== this.verDetalles){
+			Detalles det = new Detalles();
 
 
 		}else if(event.getSource()== this.itemPaciente){
